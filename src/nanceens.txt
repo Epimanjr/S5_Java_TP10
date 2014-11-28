@@ -1,0 +1,3 @@
+blaise;maxime;28 rue Aristide Briand 54520 Nancy;0383567524
+nosal;antoine;64 rue du Cardinal Mathieu 54000 Nancy;0382345671
+denis;guillaume;28 rue Aristide Briand 54520 Nancy;0382786342 
