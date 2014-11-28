@@ -3,6 +3,8 @@
  */
 package tp;
 
+import exception.NumeroTelephoneException;
+
 /**
  *
  * @author Maxime BLAISE
@@ -27,7 +29,7 @@ public class Nanceen {
     /**
      * Numéro de téléphone du nancéen.
      */
-    private int telephone;
+    private String telephone;
 
     /**
      * Constructeur d'un nancéen.
@@ -36,13 +38,21 @@ public class Nanceen {
      * @param prenom .
      * @param adresse .
      * @param telephone  .
+     * @throws exception.NumeroTelephoneException si le numéro de téléphone n'est pas correct.
      */
-    public Nanceen(String nom, String prenom, String adresse, int telephone) {
+    public Nanceen(String nom, String prenom, String adresse, String telephone) throws NumeroTelephoneException {
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
+        
         this.telephone = telephone;
+        // Test sur le numéro de téléphone.
+        if(!telephone.startsWith("0383")) {
+            throw new NumeroTelephoneException();
+        }
     }
+    
+    
 
     public String getNom() {
         return nom;
@@ -68,13 +78,15 @@ public class Nanceen {
         this.adresse = adresse;
     }
 
-    public int getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(int telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
+
+    
 
     @Override
     public String toString() {
